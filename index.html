@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Boss Guide - Survive & Thrive in Toxic Workplaces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>💼 Bad Boss Guide</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#join">Join</a>
+                <a href="#support">Support</a>
+                <a href="login.html" class="btn-nav">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Master the Art of Surviving Toxic Leadership</h1>
+                <p class="hero-subtitle">A 45-day journey combining ancient Stoic wisdom with modern workplace survival strategies</p>
+                <div class="hero-cta">
+                    <a href="#join" class="btn btn-primary">Join the Community</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="about" class="features">
+        <div class="container">
+            <h2>Why Bad Boss Guide?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Practical Philosophy</h3>
+                    <p>Learn from Marcus Aurelius, Seneca, and other Stoic thinkers—applied to real workplace challenges</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Survival Tactics</h3>
+                    <p>Proven strategies to protect your mental health and career while navigating toxic leadership</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>45-Day Journey</h3>
+                    <p>Structured daily lessons that build your resilience and workplace intelligence</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Community Support</h3>
+                    <p>Join others facing similar challenges. Share experiences, gain insights, grow together</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup Section -->
+    <section id="join" class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <h2>Join the Bad Boss Guide Community</h2>
+                <p>Get exclusive updates, bonus content, and stay connected with fellow survivors</p>
+                
+                <form id="signupForm" class="signup-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                        <small>We'll send you occasional text updates (you can opt out anytime)</small>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" name="smsConsent" id="smsConsent">
+                            I consent to receive text messages about Bad Boss Guide updates
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Join Free</button>
+                    
+                    <p class="privacy-note">🔒 We respect your privacy. Unsubscribe anytime.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="support" class="donation">
+        <div class="container">
+            <div class="donation-content">
+                <h2>Found Value in the Series?</h2>
+                <p>Your support helps create more free content to help people survive and thrive in difficult workplace situations</p>
+                
+                <div class="donation-options">
+                    <div class="donation-card" data-amount="5">
+                        <h3>☕ Coffee</h3>
+                        <p class="donation-amount">$5</p>
+                        <p>Fuel the next episode</p>
+                    </div>
+                    <div class="donation-card" data-amount="15">
+                        <h3>📚 Book</h3>
+                        <p class="donation-amount">$15</p>
+                        <p>Support research</p>
+                    </div>
+                    <div class="donation-card featured" data-amount="30">
+                        <div class="badge">Popular</div>
+                        <h3>🎓 Course</h3>
+                        <p class="donation-amount">$30</p>
+                        <p>Fund premium content</p>
+                    </div>
+                    <div class="donation-card" data-amount="custom">
+                        <h3>💝 Custom</h3>
+                        <p class="donation-amount">Your choice</p>
+                        <p>Any amount helps</p>
+                    </div>
+                </div>
+                
+                <div id="customAmountInput" class="custom-amount" style="display: none;">
+                    <input type="number" id="customAmount" min="1" placeholder="Enter amount">
+                </div>
+                
+                <button id="donateBtn" class="btn btn-accent btn-large">Support the Series</button>
+                
+                <p class="donation-note">Secure payment powered by Stripe</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Viewers Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"This series literally saved my sanity. The Stoic principles helped me detach from my boss's chaos."</p>
+                    <p class="testimonial-author">- Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Finally, someone who understands! The practical tactics are gold. Used Day 12's strategy yesterday."</p>
+                    <p class="testimonial-author">- Marcus T.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Best workplace survival guide out there. Mixing philosophy with real tactics is genius."</p>
+                    <p class="testimonial-author">- Jennifer K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bad Boss Guide</h3>
+                    <p>Helping professionals survive and thrive in challenging workplace environments</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About</a>
+                    <a href="#join">Join Community</a>
+                    <a href="#support">Support</a>
+                    <a href="login.html">Login</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="https://youtube.com/@badbossguide" target="_blank">YouTube</a>
+                    <a href="mailto:contact@badbossguide.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bad Boss Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🎉 Welcome to the Community!</h2>
+            <p>Check your email for your welcome message and exclusive content.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Got it!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

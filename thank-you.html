@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - Bad Boss Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 2rem;
+        }
+        
+        .thank-you-box {
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .thank-you-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 1s ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .thank-you-box h1 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .thank-you-box p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .next-steps {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .next-steps h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            padding: 0.75rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+        
+        .next-steps li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .social-share {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .social-share h4 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .social-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .social-btn-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+        
+        .social-btn-facebook {
+            background: #4267B2;
+            color: white;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-box">
+            <div class="thank-you-icon">🎉</div>
+            <h1>Thank You!</h1>
+            <p id="thankYouMessage">
+                Your support means everything! You're helping create free content 
+                that empowers people to survive and thrive in challenging workplace environments.
+            </p>
+            
+            <div class="next-steps">
+                <h3>What happens next?</h3>
+                <ul id="nextStepsList">
+                    <li>Check your email for your welcome message</li>
+                    <li>Access exclusive content in your member area</li>
+                    <li>Join our community discussions</li>
+                    <li>Watch new episodes as they're released</li>
+                </ul>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="member-area.html" class="btn btn-primary">Go to Member Area</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+            
+            <div class="social-share">
+                <h4>Help others find Bad Boss Guide</h4>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn social-btn-twitter" onclick="shareTwitter(); return false;">
+                        Share on Twitter
+                    </a>
+                    <a href="#" class="social-btn social-btn-facebook" onclick="shareFacebook(); return false;">
+                        Share on Facebook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Get URL parameters to determine what type of thank you message to show
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type'); // 'donation' or 'signup'
+        const sessionId = urlParams.get('session_id'); // From Stripe
+        
+        // Customize message based on type
+        const messageEl = document.getElementById('thankYouMessage');
+        const stepsEl = document.getElementById('nextStepsList');
+        
+        if (type === 'donation' || sessionId) {
+            messageEl.textContent = 
+                "Your generous donation means the world! You're directly supporting the creation of free content that helps people navigate toxic workplaces. Together, we're making a difference.";
+            
+            stepsEl.innerHTML = `
+                <li>You'll receive a donation receipt via email</li>
+                <li>Your contribution goes directly toward content creation</li>
+                <li>Continue enjoying all episodes and resources</li>
+                <li>Share the series with others who might benefit</li>
+            `;
+        } else if (type === 'signup') {
+            messageEl.textContent = 
+                "Welcome to the Bad Boss Guide community! You've taken the first step toward mastering workplace challenges with Stoic wisdom.";
+            
+            stepsEl.innerHTML = `
+                <li>Check your email for your welcome message and login details</li>
+                <li>Access exclusive content in your member area</li>
+                <li>Join community discussions with fellow members</li>
+                <li>Watch new episodes as they're released every week</li>
+            `;
+        }
+        
+        // Social sharing functions
+        function shareTwitter() {
+            const text = encodeURIComponent("Just joined @BadBossGuide - learning to survive and thrive in challenging workplaces! 💼 Check it out:");
+            const url = encodeURIComponent(window.location.origin);
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=550,height=420');
+        }
+        
+        function shareFacebook() {
+            const url = encodeURIComponent(window.location.origin);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=550,height=420');
+        }
+        
+        // Confetti effect (optional - requires canvas-confetti library)
+        // Add to <head>: <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        window.onload = function() {
+            if (typeof confetti !== 'undefined') {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+        };
+    </script>
+</body>
+</html>
