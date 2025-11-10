@@ -6,21 +6,22 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #7c3aed;
-    --accent-color: #f59e0b;
-    --dark: #1e293b;
-    --light: #f8fafc;
-    --gray: #64748b;
-    --success: #10b981;
-    --danger: #ef4444;
+    --primary-color: #3B82F6;      /* Corporate Blue */
+    --secondary-color: #1E40AF;    /* Deep Blue */
+    --accent-color: #10B981;       /* Success Green */
+    --dark: #0F172A;               /* Dark Navy */
+    --darker: #020617;             /* Almost Black */
+    --light: #1E293B;              /* Dark Gray */
+    --gray: #94A3B8;               /* Light Gray */
+    --success: #10B981;            /* Green */
+    --danger: #EF4444;             /* Red */
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--dark);
-    background: var(--light);
+    color: #E2E8F0;
+    background: var(--darker);
 }
 
 .container {
@@ -31,12 +32,13 @@ body {
 
 /* Navigation */
 .navbar {
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: var(--dark);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 1rem 0;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .navbar .container {
@@ -58,7 +60,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--dark);
+    color: #E2E8F0;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -76,7 +78,7 @@ body {
 }
 
 .btn-nav:hover {
-    background: #1d4ed8;
+    background: var(--secondary-color);
 }
 
 /* Hero Section */
@@ -126,8 +128,8 @@ body {
 }
 
 .btn-primary {
-    background: white;
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
 }
 
 .btn-primary:hover {
@@ -152,9 +154,9 @@ body {
 }
 
 .btn-accent:hover {
-    background: #d97706;
+    background: #059669;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
 }
 
 .btn-large {
@@ -165,14 +167,14 @@ body {
 /* Features Section */
 .features {
     padding: 5rem 0;
-    background: white;
+    background: var(--darker);
 }
 
 .features h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--dark);
+    color: #E2E8F0;
 }
 
 .features-grid {
@@ -185,13 +187,15 @@ body {
     text-align: center;
     padding: 2rem;
     border-radius: 12px;
-    background: var(--light);
+    background: var(--dark);
     transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.3);
 }
 
 .feature-icon {
@@ -202,7 +206,7 @@ body {
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--dark);
+    color: #E2E8F0;
 }
 
 .feature-card p {
@@ -213,7 +217,7 @@ body {
 /* Signup Section */
 .signup {
     padding: 5rem 0;
-    background: var(--light);
+    background: var(--dark);
 }
 
 .signup-content {
@@ -225,7 +229,7 @@ body {
 .signup h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--dark);
+    color: #E2E8F0;
 }
 
 .signup > .container > .signup-content > p {
@@ -235,11 +239,12 @@ body {
 }
 
 .signup-form {
-    background: white;
+    background: var(--light);
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     text-align: left;
+    border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .form-group {
@@ -250,21 +255,24 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--dark);
+    color: #E2E8F0;
 }
 
 .form-group input {
     width: 100%;
     padding: 0.875rem;
-    border: 2px solid #e2e8f0;
+    border: 2px solid #334155;
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s;
+    background: var(--dark);
+    color: #E2E8F0;
 }
 
 .form-group input:focus {
     outline: none;
     border-color: var(--primary-color);
+    background: #1a2332;
 }
 
 .form-group small {
@@ -297,7 +305,7 @@ body {
 /* Donation Section */
 .donation {
     padding: 5rem 0;
-    background: white;
+    background: var(--darker);
 }
 
 .donation-content {
@@ -309,7 +317,7 @@ body {
 .donation h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--dark);
+    color: #E2E8F0;
 }
 
 .donation-content > p {
@@ -326,24 +334,25 @@ body {
 }
 
 .donation-card {
-    background: var(--light);
+    background: var(--dark);
     padding: 2rem 1.5rem;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s;
-    border: 3px solid transparent;
+    border: 2px solid rgba(59, 130, 246, 0.2);
     position: relative;
 }
 
 .donation-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
     border-color: var(--primary-color);
 }
 
 .donation-card.featured {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
+    border-color: var(--primary-color);
 }
 
 .donation-card.featured .donation-amount {
@@ -352,7 +361,7 @@ body {
 
 .donation-card.selected {
     border-color: var(--primary-color);
-    background: #eff6ff;
+    background: rgba(59, 130, 246, 0.1);
 }
 
 .donation-card.featured.selected {
@@ -374,6 +383,11 @@ body {
 .donation-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #E2E8F0;
+}
+
+.donation-card p {
+    color: var(--gray);
 }
 
 .donation-amount {
@@ -395,6 +409,8 @@ body {
     border-radius: 8px;
     font-size: 1.1rem;
     text-align: center;
+    background: var(--dark);
+    color: #E2E8F0;
 }
 
 .donation-note {
@@ -406,14 +422,14 @@ body {
 /* Testimonials */
 .testimonials {
     padding: 5rem 0;
-    background: var(--light);
+    background: var(--dark);
 }
 
 .testimonials h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--dark);
+    color: #E2E8F0;
 }
 
 .testimonial-grid {
@@ -423,10 +439,11 @@ body {
 }
 
 .testimonial-card {
-    background: white;
+    background: var(--light);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .testimonial-card p {
@@ -437,7 +454,7 @@ body {
 
 .testimonial-author {
     font-weight: 600;
-    color: var(--dark);
+    color: #E2E8F0;
     font-style: normal !important;
 }
 
